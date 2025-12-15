@@ -12,6 +12,7 @@ Release/
 *.vcxproj.user
 
 *.exe
+*.zip
 *.obj
 *.pdb
 *.ilk
