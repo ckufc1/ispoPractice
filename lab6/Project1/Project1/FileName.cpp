@@ -9,7 +9,7 @@ private:
     unsigned long long result = 1;
 
 public:
-    int calculate(int n) {
+    unsigned long long calculate(int n) {
         if (n < 0) {
             return 0;
         }
@@ -46,20 +46,40 @@ public:
     vector<unsigned long long> getAllResults() { return results; }
 };
 
-//test
 int main() {
+    setlocale(0, "ru");
     FactorialCalculator calculator;
+    int choice;
 
-    cout << "Factorial of 5: " << calculator.calculate(5) << endl;
+    cout << "1 - одно число" << endl;
+    cout << "2 - диапазон" << endl;
+    cout << "Выбор: ";
+    cin >> choice;
 
-    cout << "Range calculation (3 to 6):" << endl;
-    calculator.calculateRange(3, 6);
+    if (choice == 1) {
+        int num;
+        cout << "Введите число: ";
+        cin >> num;
+        cout << num << "! = " << calculator.calculate(num) << endl;
+    }
+    else if (choice == 2) {
+        int start, end;
+        cout << "Начало: ";
+        cin >> start;
+        cout << "Конец: ";
+        cin >> end;
+        calculator.calculateRange(start, end);
 
-    vector<unsigned long long> res = calculator.getAllResults();
-    for (unsigned long long val : res) {
-        cout << val << " ";
+        vector<unsigned long long> res = calculator.getAllResults();
+        int index = (start < 0) ? 0 : start;
+        for (unsigned long long val : res) {
+            cout << index << "! = " << val << endl;
+            index++;
+        }
     }
 
     cin.get();
-    cout << endl;
+    cin.get();
+
+    return 0;
 }

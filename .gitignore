@@ -11,7 +11,6 @@ Release/
 *.vcxproj.filters
 *.vcxproj.user
 
-*.exe
 *.zip
 *.obj
 *.pdb
@@ -29,3 +28,4 @@ Release/
 !*.jpg
 !*.png
 !*.jpeg
+!*.exe
