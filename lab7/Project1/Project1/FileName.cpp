@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdexcept>
+#include <Windows.h>
 
 using namespace std;
 
@@ -34,7 +35,7 @@ struct UnitConverter {
 };
 
 int main() {
-    setlocale(LC_ALL, "Russian");
+    SetConsoleOutputCP(CP_UTF8);
 
     try {
         double c = 25.0;
@@ -50,5 +51,6 @@ int main() {
         cout << "Ошибка: " << e.what() << endl;
     }
 
+    cin.get();
     return 0;
 }
